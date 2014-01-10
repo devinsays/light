@@ -132,10 +132,11 @@ if ( !function_exists( 'light_google_fonts' ) ) :
  *
  * @since Light 1.0
  */
+
 function light_google_fonts() {
 	if ( !is_admin() ) {
-		wp_register_style( 'light_lora', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', '', null, 'screen' );
-		wp_enqueue_style( 'light_lora' );
+		wp_register_style( 'light_sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,700,300', '', null, 'screen' );
+		wp_enqueue_style( 'light_sans' );
 	}
 }
 endif;

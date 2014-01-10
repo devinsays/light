@@ -25,29 +25,33 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-
-	<div id="main" class="clearfix">
-		<div class="section">
 		
-		<header id="masthead" class="site-header" role="banner">
-			<hgroup>
-				<h1 class="site-title clearfix"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<?php if ( of_get_option('logo', false) ) { ?>
-					<img src="<?php echo of_get_option('logo'); ?>" alt="<?php echo bloginfo( 'name' ) ?>" />
-				<?php } else {
-					bloginfo( 'name' );
-				}?>
-				</a></h1>
-				<?php if ( of_get_option('tagline', false) ) { ?>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				<?php } ?>
-				<a href="#" class="icon menu-toggle"></a>
-			</hgroup>
+	<header id="masthead" class="site-header clearfix" role="banner">
 	
-			<nav role="navigation" class="site-navigation main-navigation clearfix">
+		<nav role="navigation" class="site-navigation main-navigation clearfix">
+			<div class="section">
 				<h3 class="assistive-text"><?php _e( 'Menu', 'light' ); ?></h3>
+				<a href="#" class="icon menu-toggle"><?php _e( 'Menu', 'light' ); ?></a>
 				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'light' ); ?>"><?php _e( 'Skip to content', 'light' ); ?></a></div>
 	
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- .site-navigation .main-navigation -->
-		</header><!-- #masthead .site-header -->
+			</div>
+		</nav><!-- .site-navigation .main-navigation -->
+		
+		<div id="hgroup" class="clearfix">
+			<div class="section">
+				<div class="pull-right">
+					<h1 class="site-title clearfix"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<?php if ( of_get_option( 'logo', false ) ) { ?>
+						<img src="<?php echo of_get_option( 'logo' ); ?>" alt="<?php echo bloginfo( 'name' ) ?>" />
+					<?php } else {
+						bloginfo( 'name' );
+					}?>
+					</a></h1>
+				</div>
+			</div>
+		</hgroup>
+
+	</header><!-- #masthead .site-header -->
+	
+	<div id="main" class=" section clearfix">

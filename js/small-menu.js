@@ -8,7 +8,7 @@ jQuery( document ).ready( function( $ ) {
 	};
 
 	$('.menu-toggle').on( 'click', function() {
-		$('.site-navigation').slideToggle('slow', function() {
+		$('.menu-primary-container').slideToggle('fast', function() {
 			if ( $(this).is(":hidden") ) {
 				$(this).attr('style','');
 			}

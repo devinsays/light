@@ -58,7 +58,7 @@
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			<span class="icon comments-link"><?php comments_popup_link( __( '<span>Comment</span>', 'light' ), __( '1 <span>Comment</span>', 'light' ), __( ' % <span>Comments</span>', 'light' ) ); ?></span>
 		<?php endif; ?>
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
+		<?php if ( 'post' == get_post_type() ) :?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'light' ) );

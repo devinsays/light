@@ -30,7 +30,7 @@ function light_setup() {
 	 * Custom template tags for this theme.
 	 */
 	require( get_template_directory() . '/inc/template-tags.php' );
-	
+
 	/**
 	 * Custom meta boxes for single posts
 	 */
@@ -111,7 +111,7 @@ function light_scripts() {
 	global $post;
 
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	
+
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thlight_comments' ) ) {
@@ -135,11 +135,12 @@ if ( !function_exists( 'light_google_fonts' ) ) :
 
 function light_google_fonts() {
 	if ( !is_admin() ) {
-		wp_register_style( 'light_sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,700,300', '', null, 'screen' );
-		wp_enqueue_style( 'light_sans' );
+		wp_register_style( 'light_source_sans', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600', '', null, 'screen' );
+		wp_enqueue_style( 'light_source_sans' );
 	}
 }
 endif;
+
 add_action( 'init', 'light_google_fonts' );
 
 if ( ! function_exists( 'light_comment' ) ) :
@@ -176,7 +177,7 @@ function light_comment( $comment, $args, $depth ) {
 				<em><?php _e( 'Your comment is awaiting moderation.', 'light' ); ?></em>
 				<br />
 			<?php endif; ?>
-			
+
 			<div class="comment-meta">
 				<time pubdate datetime="<?php comment_time( 'c' ); ?>">
 				<?php
@@ -249,16 +250,16 @@ if ( ! function_exists( 'of_get_option' ) ) :
  * If it's not installed, default settings will be used.
  */
 	function of_get_option($name, $default = false) {
-	
+
 	$optionsframework_settings = get_option('optionsframework');
-	
+
 	// Gets the unique option id
 	$option_name = $optionsframework_settings['id'];
-	
+
 	if ( get_option($option_name) ) {
 		$options = get_option($option_name);
 	}
-		
+
 	if ( isset($options[$name]) ) {
 		return $options[$name];
 	} else {

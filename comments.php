@@ -27,6 +27,7 @@
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
+		<div class="comments-title-element element">
 		<h2 class="comments-title">
 			<?php
 				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'light' ),
@@ -40,6 +41,8 @@
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'light' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'light' ) ); ?></div>
 		</nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
+
+		</div>
 		<?php endif; // check for comment navigation ?>
 
 		<ol class="commentlist">

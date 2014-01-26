@@ -6,8 +6,8 @@
  * @since Light 1.0
  */
 ?>
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 		<label for="s" class="assistive-text"><?php _e( 'Search', 'light' ); ?></label>
-		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'light' ); ?>" />
-		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'light' ); ?>" />
+		<input type="text" class="search-input" name="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'light' ); ?>" />
+		<input type="submit" class="search-submit" name="submit" value="<?php esc_attr_e( '&#xe720;', 'light' ); ?>" />
 	</form>

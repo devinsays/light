@@ -230,12 +230,10 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid #ccc;
-	border-color: #ccc #ccc #bbb #ccc;
-	border-radius: 3px;
+	border:1px solid rgba(0,0,0,.05);
 	background: #fff;
-	box-shadow: inset 0 2px 1px #fff;
-	color: rgba(0,0,0,.8);
+	border-radius: 3px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05), inset 0 -2px 1px 0px rgba(0, 0, 0, 0.2);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 14px;
@@ -246,8 +244,7 @@ button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background: #f5f5f5; /* Old browsers */
-	border-color: #bbb #bbb #aaa #bbb;
+	opacity:.8;
 }
 button:focus,
 html input[type="button"]:focus,
@@ -257,9 +254,7 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb #bbb;
-	box-shadow: inset 0 2px 3px rgba(0,0,0,.15);
-	box-shadow: inset 0 2px 2px rgba(0,0,0,.15);
+	box-shadow: none;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -276,14 +271,14 @@ input[type="search"]::-webkit-search-decoration { /* Corrects inner padding disp
 	-webkit-appearance: none;
 }
 button::-moz-focus-inner,
-input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
 input[type=text],
 input[type=email],
 textarea {
-	color: #666;
+	color: #555;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
@@ -356,7 +351,7 @@ a:active {
 /* =Structure
 ----------------------------------------------- */
 body {
-	background:#ebebeb url('images/background.jpg') 0 710px;
+	background:#ebebeb url('images/background.jpg') 0 830px;
 }
 .section {
 	max-width:1080px;
@@ -373,8 +368,8 @@ body {
 #secondary { /* Sidebar 1 */
 	float: left;
 	overflow: hidden;
-	width: 25%;
-	margin-left:-25%;
+	width: 26%;
+	margin-left:-26%;
 }
 .site-footer {
 	clear: both;
@@ -407,10 +402,10 @@ body {
 	background:#78BFA0;
 	color:#fff;
 	text-decoration: none;
-	-webkit-transition:background .2s ease;
-	-moz-transition:background .2s ease;
-	-o-transition:background .2s ease;
-	transition:background .2s ease;
+	-webkit-transition:background .4s ease-in-out;
+	-moz-transition:background .4s ease-in-out;
+	-o-transition:background .4s ease-in-out;
+	transition:background .4s ease-in-out;
 }
 .site-title a:hover {
 	background:#ecc76e;
@@ -446,7 +441,9 @@ body {
 .main-navigation a:hover {
 	color:#78BFA0;
 }
+
 /* Small menu */
+
 .main-navigation .section {
 	position: relative;
 }
@@ -455,6 +452,7 @@ body {
 	cursor: pointer;
 	position: absolute;
 	right:0;
+	top:0;
 	color:#fff;
 	display: none;
 }
@@ -702,19 +700,12 @@ object {
 	max-width: 100%;
 }
 
-/* =404
------------------------------------------------ */
-
-.error404 #searchform {
-	margin-bottom:1.5em;
-}
-
 
 /* =Navigation
 ----------------------------------------------- */
 
 #content .site-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 2em;
 	overflow: hidden;
 }
 #content .nav-previous {
@@ -741,15 +732,16 @@ object {
 .nav-paging ul li a, .nav-paging ul li span {
 	display: inline-block;
 	text-decoration: none;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-	border-right: 1px solid rgba(0, 0, 0, 0.05);
-	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
-	background: #f9f9f9;
-	padding:.5em .75em;
-}
-.nav-paging ul li a:hover {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
+	background: #fff;
+	padding:.5em 1em;
+	border-radius:3px;
+}
+.nav-paging ul li a:hover {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	border-right: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -759,14 +751,22 @@ object {
 #comments {
 	margin-bottom:3em;
 }
-.bypostauthor {
+.bypostauthor .comment {
+	background:#fafafa;
 }
 .comments-title, .nocomments, #reply-title {
 	font-weight:400;
 	color: #333;
 	font-size: 17px;
 	font-size: 1.7rem;
-	margin: 0 0 1.5em 0;
+	margin: 0 0 1.5em;
+}
+.comments-title-element {
+	padding: 1.5em 6% 0;
+	margin-bottom:3em;
+}
+#reply-title {
+	margin: 0 0 .5em;
 }
 .commentlist {
 	list-style: none;
@@ -803,10 +803,11 @@ article.comment {
 	font-size:16px;
 	font-size:1.6rem;
 }
+.comment-author cite {
+	font-style: normal;
+}
 .commentlist .avatar {
-	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.05);
-	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.05);
-	box-shadow: 0 3px 3px rgba(0,0,0,0.05);
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05), inset 0 -2px 1px 0px rgba(0, 0, 0, 0.2);
 	position: absolute;
 	top: 0;
 	left:0;
@@ -849,17 +850,16 @@ article.comment {
 #respond .form-allowed-tags code {
 	display: block;
 }
+#respond #submit {
+	color:#fff;
+	background: #78BFA0;;
+}
 
 /* =Widgets
 ----------------------------------------------- */
 
 .widget {
 	margin: 0 0 1.5em;
-}
-
-/* Search widget */
-#searchsubmit {
-	display: none;
 }
 
 /* =Footer
@@ -874,10 +874,38 @@ article.comment {
 	padding:1.75em 0 1.5em;
 }
 
+/* =404
+----------------------------------------------- */
+
+.error404 .search-form {
+	margin-bottom:1.5em;
+}
+
+/* =Search
+----------------------------------------------- */
+
+.search .search-form {
+	margin-bottom: 1.5em;
+}
+.search-form .search-input {
+	max-width: 75%;
+	margin-right:40px;
+}
+.search-form .search-submit {
+	text-align: center;
+	margin-left:-30px;
+	color:#333;
+	font-family: "LightCustom", sans-serif;
+	font-size:22px;
+	font-size:2.2rem;
+	line-height:1;
+	padding: 4px;
+}
+
 /* =Shared
 ----------------------------------------------- */
 
-.hentry, .widget {
+.hentry, #secondary .widget, .element {
 	background:#fff;
 	border-radius: 3px;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05), inset 0 -2px 1px 0px rgba(0, 0, 0, 0.2);
@@ -960,6 +988,7 @@ article.comment {
 		display: none;
 	}
 	.main-navigation {
+		clear:both;
 		float:none;
 	}
 	.main-navigation ul {

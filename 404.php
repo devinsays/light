@@ -12,13 +12,13 @@ get_header(); ?>
 			<div id="content" role="main">
 
 				<article id="post-0" class="post error404 not-found hentry">
-					
+
 					<header class="entry-header clearfix">
 						<div class="header-padding">
 						<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'light' ); ?></h1>
 						</div>
 					</header><!-- .entry-header -->
-				
+
 					<div class="entry-content clearfix">
 						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'light' ); ?></p>
 
@@ -38,11 +38,11 @@ get_header(); ?>
 						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'light' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 						?>
-	
+
 						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
 					</div><!-- .entry-content -->
-				
+
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 			</div><!-- #content -->

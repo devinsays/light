@@ -19,3 +19,24 @@ Font license info
    Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 
+Glyphs Included:
+
+.icon-tags:before { content: '\e70d'; }
+.icon-twitter:before { content: '\e806'; }
+.icon-picture:before { content: '\e808'; }
+.icon-camera:before { content: '\e807'; }
+.icon-menu:before { content: '\2630'; }
+.icon-cancel-circled:before { content: '\e80d'; }
+.icon-link:before { content: '\e80e'; }
+.icon-pencil:before { content: '\270e'; }
+.icon-search:before { content: '\e800'; }
+.icon-chat:before { content: '\e720'; }
+.icon-doc-text:before { content: ''; }
+.icon-down-open:before { content: '\e80b'; }
+.icon-left-open:before { content: '\e809'; }
+.icon-right-open:before { content: '\e80a'; }
+.icon-up-open:before { content: '\e80c'; }
+.icon-github:before { content: '\e805'; }
+.icon-comment:before { content: '\e80f'; }
+
+

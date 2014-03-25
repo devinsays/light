@@ -352,6 +352,7 @@ a:active {
 ----------------------------------------------- */
 body {
 	background:#ebebeb url('images/background.jpg') 0 830px;
+	background-attachment: fixed;
 }
 .section {
 	max-width:1080px;
@@ -751,7 +752,7 @@ object {
 #comments {
 	margin-bottom:3em;
 }
-.bypostauthor .comment {
+.bypostauthor > .comment {
 	background:#fafafa;
 }
 .comments-title, .nocomments, #reply-title {
@@ -899,7 +900,7 @@ article.comment {
 	font-size:22px;
 	font-size:2.2rem;
 	line-height:1;
-	padding: 4px;
+	padding: 4px 6px;
 }
 
 /* =Shared
@@ -961,6 +962,20 @@ article.comment {
 .page-id-7171 td {
 	border-bottom:1px solid #ccc;
 }
+
+/*
+.edd-submit.button, .edd-submit.button.gray, .edd-submit.button:visited {
+	border:1px solid rgba(0,0,0,.05);
+	background: #78BFA0;
+	border-radius: 3px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05), inset 0 -2px 1px 0px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	-webkit-appearance: button;
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding: .75em 1.5em .75em;
+}
+*/
 
 /* =Responsive
 ----------------------------------------------- */
